@@ -1,0 +1,43 @@
+{
+  "name": "14-4-JS-plugins-combined",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "npm-run-all test:*",
+    "test:html": "nu-html-checker *.html",
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdir -p sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build": "npm-run-all build:* test",
+    "build:clean": "rimraf css/*",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "watch": "npm-run-all build -p watch:*",
+    "watch:sass": "node-sass --output-style expanded --source-map true -o css sass --watch",
+    "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/style.css",
+    "watch:browsersync": "browser-sync start --server --files 'css/*.css, *.html, js/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwabe/14-4-JS-plugins-combined.git"
+  },
+  "keywords": [],
+  "author": "bebe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwabe/14-4-JS-plugins-combined/issues"
+  },
+  "homepage": "https://github.com/dwabe/14-4-JS-plugins-combined#readme",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.26.5",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^5.2.0",
+    "rimraf": "^2.6.3"
+  }
+}
