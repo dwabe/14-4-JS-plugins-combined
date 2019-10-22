@@ -1,0 +1,75 @@
+.main-carousel {
+    background: #2c3e50;
+}
+
+.carousel-cell {
+    width: 100%;
+    height: 50vh;
+    margin: 10px;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    @media screen and ( min-width: 768px ) {
+        width: 50%;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+
+    .title {
+        color: #fff;
+        font-family: 'Acme', sans-serif;
+        font-size: 65px;
+        margin: 0;
+    }
+
+    .description {
+        color: #f1c40f;
+        font-family: 'Acme', sans-serif;
+        font-size: 20px;
+        margin: 0 0 10px 0;
+    }
+}
+
+.flickity-page-dots {
+    display: none;
+}
+
+.reset-btn {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.75);
+    top: 20px;
+    right: 25px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 40px;
+    transition: 0.1s;
+
+    &:hover {
+        color: rgb(255, 255, 255);
+    }
+}
+
+.progress-bar-container {
+    height: 20px;
+    background: #2c3e50;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(45deg, #16a085 0%,#27ae60 20%,#2980b9 40%,#8e44ad 60%,#9b59b6 80%);
+}
+
+.gmap {
+    height: 50vh;
+}
