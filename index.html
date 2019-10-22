@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>14-4-JS-plugins-combined</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+        <link rel="stylesheet" href="vendor/normalize.css" />
+        <link rel="stylesheet" href="vendor/flickity.min.css" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="main-carousel" id="carousel-wrapper">
+        </div>
+        <div class="reset-btn">
+            <i class="fas fa-redo"></i>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <div id="map" class="gmap"></div>
+
+
+        <script id="template-slide" type="x-tmpl-mustache">
+            <div
+                class="carousel-cell"
+                style="background-image: url( {{ backgroundImageURL }} );"
+                id={{ id }}
+            >
+                <div class="container">
+                    <p class="title">{{ title }}</p>
+                    {{{ description }}}
+                </div>
+            </div>
+        </script>
+
+        <script>
+            const slidesData = [
+                {
+                    coords: {
+                        lat: 48.834860,
+                        lng: 9.151090
+                    },
+                    id: "porsche",
+                    title: "Porsche",
+                    description: "<p class=\"description\">Stuttgart</p>",
+                    backgroundImageURL: "images/porsche.jpg"
+                },
+                {
+                    coords: {
+                        lat: 48.177398,
+                        lng: 11.556243
+                    },
+                    id: "bmw",
+                    title: "BMW",
+                    description: "<p class=\"description\">Muenchen</p>",
+                    backgroundImageURL: "images/bmw.jpg"
+                },
+                {
+                    coords: {
+                        lat: 48.786234,
+                        lng: 11.412990
+                    },
+                    id: "audi",
+                    title: "Audi",
+                    description: "<p class=\"description\">Ingolstadt</p>",
+                    backgroundImageURL: "images/audi.jpg"
+                },
+                {
+                    coords: {
+                        lat: 48.139686, 
+                        lng: 11.547498
+                    },
+                    id: "MINI",
+                    title: "MINI",
+                    description: "<p class=\"description\">Muenchen</p>",
+                    backgroundImageURL: "images/mini.jpg"
+                },
+                {
+                    coords: {
+                        lat: 48.788965,
+                        lng: 9.235312
+                    },
+                    id: "mercedes",
+                    title: "Mercedes",
+                    description: "<p class=\"description\">Stuttgart</p>",
+                    backgroundImageURL: "images/mercedes.jpg"
+                }
+            ];
+        </script>
+
+        <script src="vendor/flickity.pkgd.min.js"></script>
+        <script src="vendor/hash.js"></script>
+        <script src="vendor/mustache.min.js"></script>
+        <script src="js/script.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK_NrPw6vGlFjut3V4ZXrMGks9kiA27eM&callback=initMap"></script>
+    </body>
+
+</html>
